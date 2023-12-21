@@ -4,7 +4,13 @@ const Footer = () => {
   return (
     <footer className="w-full h-20 absolute bottom-0 flex justify-center items-center bg-myPrimary">
       <div>
-        <h3 className="text-white">Github</h3>
+        <a
+          href="https://github.com/Kristian-kodehode"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-2xl ">
+          <h3 className="text-white hover:text-mySecondary">Github</h3>
+        </a>
       </div>
     </footer>
   );
