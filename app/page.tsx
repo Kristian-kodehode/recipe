@@ -1,8 +1,9 @@
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-myPrimary">Hello Recipe mini project</h1>
-      <h2 className="text-mySecondary">This will be fun</h2>
-    </div>
+    <section className="h-screen overflow-scroll flex items-center justify-center">
+      <h1 className="text-myPrimary text-center ">
+        Prøv en av mine 3 oppskrifter idag!
+      </h1>
+    </section>
   );
 }

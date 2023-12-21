@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import Link from "next/link";
 
@@ -13,7 +12,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className=" w-full bg-white flex justify-between p-8 items-center mb-4 shadow-lg z-10">
+    <nav className="fixed top-0 w-full bg-white flex justify-between p-8 items-center mb-4 shadow-lg z-10">
       <div className="flex ">
         <Link
           href="/"
@@ -26,6 +25,18 @@ const NavBar = () => {
           href="/RecipePage"
           className="text-myPrimary hover:text-mySecondary cursor-pointer">
           Recipe1
+        </Link>
+        <Link
+          href="/RecipePage"
+          className="text-myPrimary hover:text-mySecondary cursor-pointer"
+          onClick={handleLinkClick}>
+          Recipe 2
+        </Link>
+        <Link
+          href="/RecipePage"
+          className="text-myPrimary hover:text-mySecondary cursor-pointer"
+          onClick={handleLinkClick}>
+          Recipe 3
         </Link>
       </div>
 
@@ -51,11 +62,21 @@ const NavBar = () => {
             <div
               className="fixed inset-0 z-40 bg-mySecondary opacity-80 cursor-pointer"
               onClick={toggle}></div>
-            <div className="bg-myPrimary absolute top-0 left-0 z-50 h-1/2 flex flex-col justify-around items-center gap-6 w-full">
+            <div className="bg-myPrimary fixed top-0 left-0 z-50 h-1/2 flex flex-col justify-around items-center gap-6 w-full">
               <Link
                 href="/RecipePage"
                 onClick={handleLinkClick}>
                 <h1 className="text-3xl text-white">Recipe 1</h1>
+              </Link>
+              <Link
+                href="/RecipePage"
+                onClick={handleLinkClick}>
+                <h1 className="text-3xl text-white">Recipe 2</h1>
+              </Link>
+              <Link
+                href="/RecipePage"
+                onClick={handleLinkClick}>
+                <h1 className="text-3xl text-white">Recipe 3</h1>
               </Link>
             </div>
           </div>
