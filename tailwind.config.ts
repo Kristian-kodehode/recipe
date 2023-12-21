@@ -14,6 +14,9 @@ const config: Config = {
         myBlack: "#262626",
         myWhite: "#F5F5F5",
       },
+      backgroundImage: (theme) => ({
+        default: "url('/Images/background.jpg')",
+      }),
     },
   },
   plugins: [],

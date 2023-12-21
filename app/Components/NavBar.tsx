@@ -13,7 +13,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="  w-full bg-white flex justify-between p-8 items-center mb-4 shadow-lg">
+    <nav className=" w-full bg-white flex justify-between p-8 items-center mb-4 shadow-lg z-10">
       <div className="flex ">
         <Link
           href="/"
@@ -23,8 +23,8 @@ const NavBar = () => {
       </div>
       <div className="hidden  sm:flex text-slate-800  gap-4 justify-end">
         <Link
-          href="/"
-          className="text-slate-400 hover:underline hover:text-mySecondary">
+          href="/RecipePage"
+          className="text-myPrimary hover:text-mySecondary cursor-pointer">
           Recipe1
         </Link>
       </div>
@@ -49,13 +49,13 @@ const NavBar = () => {
         {isOpen && (
           <div>
             <div
-              className="fixed inset-0 z-40 bg-black opacity-80"
+              className="fixed inset-0 z-40 bg-mySecondary opacity-80 cursor-pointer"
               onClick={toggle}></div>
-            <div className=" absolute top-0 left-0 z-50 h-1/2 flex flex-col justify-around items-center gap-6 w-full">
+            <div className="bg-myPrimary absolute top-0 left-0 z-50 h-1/2 flex flex-col justify-around items-center gap-6 w-full">
               <Link
-                href="/"
+                href="/RecipePage"
                 onClick={handleLinkClick}>
-                <h1 className="text-3xl text-slate-600">Recipe 1</h1>
+                <h1 className="text-3xl text-white">Recipe 1</h1>
               </Link>
             </div>
           </div>
