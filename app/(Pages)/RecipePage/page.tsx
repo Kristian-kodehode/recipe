@@ -4,7 +4,6 @@ const RecipePage = () => {
   return (
     <section className="h-screen overflow-auto pt-32 pb-32 flex flex-col gap-4">
       <h1 className="text-myPrimary text-center p-4">Recipe Page Heading</h1>
-      <h2 className="text-mySecondary">This is where each recipe will be</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, dolores
         quod velit exercitationem atque architecto, cupiditate repellat iusto

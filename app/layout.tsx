@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={lato.className}>
         <NavBar />
         {children}
-        <div className="bg-default absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center h-screen -z-10 opacity-10"></div>
+        <div className="bg-default absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center h-screen -z-10 opacity-5"></div>
         <Footer />
       </body>
     </html>

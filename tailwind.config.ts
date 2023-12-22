@@ -16,6 +16,9 @@ const config: Config = {
       },
       backgroundImage: (theme) => ({
         default: "url('/Images/background.jpg')",
+        taco: "url('/Images/taco.jpg')",
+        pannekake: "url('/Images/pannekake.jpg')",
+        eplekake: "url('/Images/eplekake.jpg')",
       }),
     },
   },
