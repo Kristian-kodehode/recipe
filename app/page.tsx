@@ -1,13 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 
-import { client } from "@/app/lib/sanity";
+import { client, urlFor } from "@/app/lib/sanity";
 
 const getData = async () => {
   const query = `*[_type == "recipe"]{
     title, 
     instructions, 
     description, 
-    image
+    image{asset}
   }`;
   const data = await client.fetch(query);
   return data;
@@ -18,29 +19,31 @@ export default async function Home() {
   return (
     <section className="h-screen overflow-auto pt-32 flex flex-col gap-4 px-4 mx-auto max-w-[800px]">
       <h1 className="text-myPrimary text-center pb-8">
-        Prøv en av mine 3 <br />
-        oppskrifter idag! {data.length}
+        Prøv en av mine {data.length} <br />
+        oppskrifter idag!
       </h1>
-      <div className=" w-full h-24 rounded-lg bg-taco bg-cover bg-center self-center flex justify-center items-center">
-        <Link href="/RecipePage">
-          <h1 className="text-myWhite p-3 bg-none rounded-md hover:bg-black hover:bg-opacity-30">
-            Taco
-          </h1>
-        </Link>
-      </div>
-      <div className=" w-full h-24 rounded-lg bg-pannekake bg-cover bg-center self-center flex justify-center items-center">
-        <Link href="/RecipePage">
-          <h1 className="text-myWhite p-3 bg-none rounded-md hover:bg-black hover:bg-opacity-30">
-            Pannekaker
-          </h1>
-        </Link>
-      </div>
-      <div className=" w-full h-24 rounded-lg bg-eplekake bg-cover bg-center self-center flex justify-center items-center">
-        <Link href="/RecipePage">
-          <h1 className="text-myWhite p-3 bg-none rounded-md hover:bg-black hover:bg-opacity-30">
-            Eplekake
-          </h1>
-        </Link>
+
+      <div className="flex flex-col gap-4">
+        {data.map((recipe: any, idx: number) => (
+          <div
+            key={idx}
+            className="relative cursor-pointer overflow-hidden w-full h-24 rounded-lg self-center ">
+            <Link
+              href="/RecipePage"
+              className="flex justify-center items-center w-full h-full">
+              <h1 className="absolute py-4 text-myWhite bg-none w-full h-full text-center hover:bg-gray-900 hover:bg-opacity-60 hover:backdrop-blur-sm">
+                {recipe.title}
+              </h1>
+              <Image
+                alt="Recipe image"
+                src={urlFor(recipe.image).url()}
+                objectFit="fill"
+                width={1200}
+                height={800}
+              />
+            </Link>
+          </div>
+        ))}
       </div>
     </section>
   );
