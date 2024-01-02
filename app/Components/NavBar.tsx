@@ -1,8 +1,26 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import path from "path";
+
+const links = [
+  {
+    name: "Taco",
+    href: "/Taco",
+  },
+  {
+    name: "Pannekake",
+    href: "/Pannekake",
+  },
+  {
+    name: "Eplekake",
+    href: "/Eplekake",
+  },
+];
 
 const NavBar = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -21,23 +39,23 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="hidden  sm:flex text-slate-800  gap-4 justify-end">
-        <Link
-          href="/RecipePage"
-          className="text-myPrimary hover:text-mySecondary cursor-pointer">
-          Recipe1
-        </Link>
-        <Link
-          href="/RecipePage"
-          className="text-myPrimary hover:text-mySecondary cursor-pointer"
-          onClick={handleLinkClick}>
-          Recipe 2
-        </Link>
-        <Link
-          href="/RecipePage"
-          className="text-myPrimary hover:text-mySecondary cursor-pointer"
-          onClick={handleLinkClick}>
-          Recipe 3
-        </Link>
+        {links.map((link, idx) => (
+          <div key={idx}>
+            {pathname === link.href ? (
+              <Link
+                href={link.href}
+                className="text-myPrimary underline underline-offset-8 font-semibold hover:text-mySecondary cursor-pointer">
+                {link.name}
+              </Link>
+            ) : (
+              <Link
+                href={link.href}
+                className="text-slate-400 hover:text-mySecondary cursor-pointer">
+                {link.name}
+              </Link>
+            )}
+          </div>
+        ))}
       </div>
 
       <div className="sm:hidden  flex flex-col items-end justify-end ">
@@ -63,21 +81,25 @@ const NavBar = () => {
               className="fixed inset-0 z-40 bg-mySecondary opacity-80 cursor-pointer"
               onClick={toggle}></div>
             <div className="bg-myPrimary fixed top-0 left-0 z-50 h-1/2 flex flex-col justify-around items-center gap-6 w-full">
-              <Link
-                href="/RecipePage"
-                onClick={handleLinkClick}>
-                <h1 className="text-3xl text-white">Recipe 1</h1>
-              </Link>
-              <Link
-                href="/RecipePage"
-                onClick={handleLinkClick}>
-                <h1 className="text-3xl text-white">Recipe 2</h1>
-              </Link>
-              <Link
-                href="/RecipePage"
-                onClick={handleLinkClick}>
-                <h1 className="text-3xl text-white">Recipe 3</h1>
-              </Link>
+              {links.map((link, idx) => (
+                <div key={idx}>
+                  {pathname === link.href ? (
+                    <Link
+                      href={link.href}
+                      onClick={handleLinkClick}>
+                      <h1 className="text-3xl text-white">{link.name}</h1>
+                    </Link>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={handleLinkClick}>
+                      <h1 className="text-3xl text-mySecondary hover:text-mySecondary cursor-pointer">
+                        {link.name}
+                      </h1>
+                    </Link>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         )}
