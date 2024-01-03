@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Lottie from "lottie-react";
-import animationData from "./assets/dataAnimation2.json";
+import animationData from "./assets/dataAnimation3.json";
 
 const Loading = () => {
   return (

@@ -27,8 +27,8 @@ export default function RootLayout({
         <NavBar />
         <Suspense fallback={<Loading />}>
           <div>{children}</div>
-          <div className="bg-default absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center h-screen -z-10 opacity-5"></div>
         </Suspense>
+        <div className="bg-default absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center h-screen -z-10 opacity-5"></div>
         <Footer />
       </body>
     </html>
