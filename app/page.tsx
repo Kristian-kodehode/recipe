@@ -32,7 +32,7 @@ export default async function Home() {
             key={recipe._id}
             className="relative cursor-pointer overflow-hidden w-full h-24 rounded-lg self-center ">
             <Link
-              href={`/recipe/${recipe.slug}`}
+              href={`/${recipe.slug}`}
               className="flex justify-center items-center w-full h-full">
               <h1 className="absolute py-4 text-myWhite bg-none w-full h-full text-center hover:bg-gray-900 hover:bg-opacity-60 hover:backdrop-blur-sm">
                 {recipe.title}

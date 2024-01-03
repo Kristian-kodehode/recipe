@@ -7,15 +7,15 @@ import { usePathname } from "next/navigation";
 const links = [
   {
     name: "Taco",
-    href: "recipe/taco",
+    href: "/taco",
   },
   {
     name: "Pannekake",
-    href: "recipe/pannekaker",
+    href: "/pannekaker",
   },
   {
     name: "Eplekake",
-    href: "recipe/eplekake",
+    href: "/eplekake",
   },
 ];
 
@@ -43,7 +43,7 @@ const NavBar = () => {
           <div key={idx}>
             {pathname === link.name ? (
               <Link
-                href={`/recipe/${link.href}`}
+                href={`/${link.href}`}
                 className="text-myPrimary underline underline-offset-8 font-semibold hover:text-mySecondary cursor-pointer">
                 {link.name}
               </Link>
@@ -85,7 +85,7 @@ const NavBar = () => {
                 <div key={idx}>
                   {pathname === link.name ? (
                     <Link
-                      href={`/recipe/${link.href}`}
+                      href={`/${link.href}`}
                       onClick={handleLinkClick}>
                       <h1 className="text-3xl text-white">{link.name}</h1>
                     </Link>
