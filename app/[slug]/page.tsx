@@ -30,11 +30,11 @@ const RecipePage = async ({ params }: { params: { slug: string } }) => {
         <section className=" flex flex-col gap-4 border-b-2 pb-8">
           <p className="text-xl text-mySecondary">{data.description}</p>
         </section>
-        <section className="w-full flex flex-col gap-4 border-b-2 pb-8">
+        <section className="w-full flex flex-col gap-4 border-b-2 pt-2 pb-8">
           <h3 className="font-bold underline underline-offset-8 text-mySecondary">
             Ingredienser:
           </h3>
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4 text-myBlack">
             {data.ingredients.map((ingredient, index) => (
               <li key={index}>{ingredient}</li>
             ))}
@@ -44,7 +44,7 @@ const RecipePage = async ({ params }: { params: { slug: string } }) => {
           <h3 className="font-bold underline underline-offset-8 text-mySecondary">
             Slik gjør du:
           </h3>
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4 text-myBlack">
             {data.instructions.map((instruction, index) => (
               <li key={index}>{instruction}</li>
             ))}
