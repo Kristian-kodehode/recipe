@@ -24,7 +24,7 @@ const RecipePage = async ({ params }: { params: { slug: string } }) => {
     return <div>Loading...</div>;
   }
   return (
-    <main className="h-screen overflow-auto pt-32 pb-32 flex flex-col gap-4 items-center">
+    <main className="h-screen overflow-auto pt-32 pb-32 px-4 flex flex-col gap-4 items-center">
       <h1 className="text-myPrimary text-center p-4">{data.title}</h1>
       <div className="max-w-md flex flex-col gap-4 items-center">
         <section className=" flex flex-col gap-4 border-b-2 pb-8">
@@ -40,7 +40,7 @@ const RecipePage = async ({ params }: { params: { slug: string } }) => {
             ))}
           </ul>
         </section>
-        <section className="max-w-md flex flex-col gap-4 border-b-2 pb-8">
+        <section className="w-full flex flex-col gap-4 border-b-2 pb-8">
           <h3 className="font-bold underline underline-offset-8 text-mySecondary">
             Slik gjør du:
           </h3>
