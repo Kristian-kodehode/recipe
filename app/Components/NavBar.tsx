@@ -41,9 +41,9 @@ const NavBar = () => {
       <div className="hidden  sm:flex text-slate-800  gap-4 justify-end">
         {links.map((link, idx) => (
           <div key={idx}>
-            {pathname === link.name ? (
+            {pathname === link.href ? (
               <Link
-                href={`/${link.href}`}
+                href={link.href}
                 className="text-myPrimary underline underline-offset-8 font-semibold hover:text-mySecondary cursor-pointer">
                 {link.name}
               </Link>
@@ -83,11 +83,13 @@ const NavBar = () => {
             <div className="bg-myPrimary fixed top-0 left-0 z-50 h-1/2 flex flex-col justify-around items-center gap-6 w-full">
               {links.map((link, idx) => (
                 <div key={idx}>
-                  {pathname === link.name ? (
+                  {pathname === link.href ? (
                     <Link
-                      href={`/${link.href}`}
+                      href={link.href}
                       onClick={handleLinkClick}>
-                      <h1 className="text-3xl text-white">{link.name}</h1>
+                      <h1 className="text-3xl text-white underline underline-offset-8">
+                        {link.name}
+                      </h1>
                     </Link>
                   ) : (
                     <Link
