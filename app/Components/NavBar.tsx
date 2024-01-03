@@ -7,15 +7,15 @@ import { usePathname } from "next/navigation";
 const links = [
   {
     name: "Taco",
-    href: "/Taco",
+    href: "recipe/taco",
   },
   {
     name: "Pannekake",
-    href: "/Pannekake",
+    href: "recipe/pannekaker",
   },
   {
     name: "Eplekake",
-    href: "/Eplekake",
+    href: "recipe/eplekake",
   },
 ];
 
