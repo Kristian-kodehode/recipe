@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Lato } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -23,8 +25,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={lato.className}>
         <NavBar />
-        <div>{children}</div>
-        <div className="bg-default absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center h-screen -z-10 opacity-5"></div>
+        <Suspense fallback={<Loading />}>
+          <div>{children}</div>
+          <div className="bg-default absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center h-screen -z-10 opacity-5"></div>
+        </Suspense>
         <Footer />
       </body>
     </html>
