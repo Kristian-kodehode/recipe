@@ -1,8 +1,12 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Loading from "../loading";
-const DelayedRender = ({ children }: { children: React.ReactNode }) => {
+
+type DelayProps = {
+  children: React.ReactNode;
+};
+
+const DelayedRender = ({ children }: DelayProps) => {
   const [showChildren, setShowChildren] = useState(false);
 
   useEffect(() => {
