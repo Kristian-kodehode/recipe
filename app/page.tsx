@@ -13,6 +13,7 @@ const getData = async () => {
     image{asset},
     "slug": slug.current,
   }`;
+
   const data = await client.fetch(query);
   return data;
 };
@@ -25,7 +26,6 @@ export default async function Home() {
         Prøv en av mine {data.length} <br />
         oppskrifter idag!
       </h1>
-
       <div className="flex flex-col gap-4">
         {data.map((recipe, _id) => (
           <div
